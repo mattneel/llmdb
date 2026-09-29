@@ -23,6 +23,13 @@ priv/llm_db/local/
 - **Provider files**: Must be named `provider.toml`
 - **Model files**: Can be any name ending in `.toml` (e.g., `gpt-4o.toml`)
 
+The docs-backed `openai/gpt-6.1-sol.toml` entry makes
+`openai:gpt-6.1-sol` available without an authenticated inventory refresh.
+Its `cost` fields describe Standard requests with at most 272K input tokens;
+`pricing.components` captures full-request long-context rates and processing
+modifiers. Tool calling uses Responses, not Chat Completions. Evidence:
+[OpenAI model documentation](https://developers.openai.com/api/docs/models/gpt-6.1-sol).
+
 ## Provider TOML Schema
 
 ```toml
